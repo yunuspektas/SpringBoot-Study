@@ -91,4 +91,10 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository.findAll(pageable);
 	}
 
+	@Override
+	public List<Student> findAllEqualsGrade(Integer grade) {
+		
+		return studentRepository.findAllEqualsGrade(grade);
+	}
+
 }

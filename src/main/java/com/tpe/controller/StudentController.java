@@ -98,6 +98,18 @@ public class StudentController {
 			return ResponseEntity.ok(studentPage);
 		}
 	    
+	    @GetMapping("/querylastname")
+		public ResponseEntity<List<Student>> getStudentByLastName(@RequestParam("lastName") String lastName){
+			List<Student> studentList= studentService.findStudents(lastName);
+			return ResponseEntity.ok(studentList);
+		}
+	    
+	    @GetMapping("/grade/{grade}")
+	    public ResponseEntity<List<Student>> getStudentsEqualsGrade(@PathVariable("grade") Integer grade){
+	    	List<Student> list = studentService.findAllEqualsGrade(grade);
+	    	return ResponseEntity.ok(list);
+	    }
+	    
 	
 	
 	
