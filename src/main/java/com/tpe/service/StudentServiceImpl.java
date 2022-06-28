@@ -97,4 +97,11 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository.findAllEqualsGrade(grade);
 	}
 
+	@Override
+	public StudentDTO findStudentDTOById(Long id) {
+		return studentRepository.
+				findStudentDTOById(id).orElseThrow(()->new
+						ResourceNotFoundException("Student not found with id:"+id));
+	}
+
 }

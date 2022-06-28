@@ -27,4 +27,6 @@ public interface StudentService {
 	Page<Student> getAllWithPage(Pageable pageable); 
 	
 	List<Student> findAllEqualsGrade(Integer grade);
+
+	StudentDTO findStudentDTOById(Long id);
 }

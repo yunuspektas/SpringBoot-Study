@@ -110,6 +110,12 @@ public class StudentController {
 	    	return ResponseEntity.ok(list);
 	    }
 	    
+	    @GetMapping("/query/dto")
+		public ResponseEntity<StudentDTO> getStudenDTO(@RequestParam("id") Long id){
+			StudentDTO studentDTO= studentService.findStudentDTOById(id);
+			return ResponseEntity.ok(studentDTO);
+		} 
+	    
 	
 	
 	
